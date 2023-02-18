@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - ptint the last digit of a number generated randomly
+ * main - print the last digit of a number generated randomly
  * and whether it is greater than 5, less than 6 or 0
  *
  * Return: 0 (success)

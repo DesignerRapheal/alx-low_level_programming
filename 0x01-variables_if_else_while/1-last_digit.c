@@ -1,33 +1,31 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
 
 /**
- * main - print all possible combinations of two digit numbers
+ * main - ptint the last digit of a number generated randomly
+ * and whether it is greater than 5, less than 6 or 0
+ *
  * Return: 0 (success)
  */
 int main(void)
 {
-	int i, j;
+	int n;
 
-	for (i = 0; i < 100; i++)
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+
+	if ((n % 10) > 5)
 	{
-		for (j = 0; j < 100; j++)
-		{
-			if (i < j)
-			{
-				putchar((i / 10) + 48);
-				putchar((i % 10) + 48);
-				putchar(' ');
-				putchar((j / 10) + 48);
-				putchar((j % 10) + 48);
-				if (i != 98 || j != 99)
-				{
-					putchar(',');
-					putchar(' ');
-				}
-			}
-		}
+		printf("Last digit of %d is %d and is greater than 5\n", n, n % 10);
 	}
-	putchar('\n');
+	else if ((n % 10) < 6 && (n % 10) != 0)
+	{
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, n % 10);
+	}
+	else
+	{
+		printf("Last digit of %d is %d and is 0\n", n, n % 10);
+	}
 	return (0);
 }
-

@@ -1,29 +1,28 @@
 #include <stdio.h>
 
 /**
- * main - print all the possible different combinations of three digits
+ * main - print all possible combinations of two digit numbers
  * Return: 0 (success)
  */
 int main(void)
 {
-	int n, m, l;
+	int i, j;
 
-	for  (n = 48; n < 58; n++)
+	for (i = 0; i < 100; i++)
 	{
-		for (m = 49; m < 58; m++)
+		for (j = 0; j < 100; j++)
 		{
-			for (l = 50; l < 58; l++)
+			if (i < j)
 			{
-				if (l > m && m > n)
+				putchar((i / 10) + 48);
+				putchar((i % 10) + 48);
+				putchar(' ');
+				putchar((j / 10) + 48);
+				putchar((j % 10) + 48);
+				if (i != 98 || j != 99)
 				{
-					putchar(n);
-					putchar(m);
-					putchar(l);
-					if (n != 55 || m != 56)
-					{
-						putchar(',');
-						putchar(' ');
-					}
+					putchar(',');
+					putchar(' ');
 				}
 			}
 		}

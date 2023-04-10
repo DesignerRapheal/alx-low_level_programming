@@ -1,7 +1,8 @@
 #include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
+#include <stdio.h:wq
+>
+#include "main.h"
+
 
 /**
  * read_textfile - Reads a text file and prints it to standard output

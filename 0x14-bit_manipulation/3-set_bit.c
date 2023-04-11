@@ -1,28 +1,20 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "main.h"
 
-
 /**
- * flip_bits - Counts the number of bits needed to be flipped to get from one
- *             number to another.
- * @n: The first number.
- * @m: The second number.
+ * set_bit - Sets the value of a bit at a given index to 1.
+ * @n: A pointer to the unsigned long int to set a bit in.
+ * @index: The index to set the value at - indices start at 0.
  *
- * Return: The number of bits needed to be flipped to get from one number to
- *         another.
+ * Return: If an error occurs - -1.
+ *         Otherwise - 1.
  */
-unsigned int flip_bits(unsigned long int n, unsigned long int m)
+int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int xor_val = n ^ m;
-	unsigned int count = 0;
+	if (index >= (sizeof(unsigned long int) * 8))
+		return (-1);
 
-	while (xor_val > 0)
-	{
-		count += xor_val & 1;
-		xor_val >>= 1;
-	}
+	*n ^= (1 << index);
 
-	return (count);
+	return (1);
 }
+

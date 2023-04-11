@@ -1,4 +1,8 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 #include "main.h"
+
 
 /**
  * flip_bits - Counts the number of bits needed to be flipped to get from one
@@ -22,4 +26,3 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	return (count);
 }
-

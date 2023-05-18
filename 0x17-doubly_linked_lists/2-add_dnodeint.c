@@ -1,5 +1,4 @@
 #include "lists.h"
-
 /**
  * add_dnodeint - Inserts a new node at the beginning of 
  * a doubly linked list
@@ -13,17 +12,29 @@
 
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	dlistint_t *temp;
+	dlistint_t *new;
+	dlistint_t *h;
 
-	temp = malloc(sizeof(dlistint_t));
-
-	if (temp == NULL)
+	new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
 		return (NULL);
-	temp->n = n;
-	temp->prev = NULL;
-	temp->next = *head;
-	if (*head != NULL)
-		(*head)->prev = temp;
-	*head = temp;
-	return (temp);
+
+	new->n = n;
+	new->prev = NULL;
+	h = *head;
+
+	if (h != NULL)
+	{
+		while (h->prev != NULL)
+			h = h->prev;
+	}
+
+	new->next = h;
+
+	if (h != NULL)
+		h->prev = new;
+
+	*head = new;
+
+	return (new);
 }

@@ -10,6 +10,7 @@
  * Return: The biggest number
  * author - designerrapheal
  */
+
 int f4(char *usrn, int len)
 {
 	int ch;
@@ -31,6 +32,7 @@ int f4(char *usrn, int len)
 
 	return (rand_num & 63);
 }
+
 /**
  * multiply_username_chars - Multiplies each character of the username
  *
@@ -86,6 +88,7 @@ int f6(char *usrn)
  * @argv: Array of command-line argument strings
  * Return: Always 0
  */
+
 int main(int argc, char **argv)
 {
 	char keygen[7];
